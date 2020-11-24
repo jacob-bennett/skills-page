@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const argv = require('yargs').argv
 const clearDirectory = require('del');
-const requireUncached = require('./requireUncached');
+const requireUncached = require('./src/requireUncached');
 const nunjucks = require('gulp-nunjucks');
 const rename = require('gulp-rename');
 
@@ -16,14 +16,14 @@ async function clean(done) {
 }
 
 function html() {
-  return gulp.src('skills.njk.html')
-    .pipe(nunjucks.compile(requireUncached('./data')))
+  return gulp.src('src/skills.njk.html')
+    .pipe(nunjucks.compile(requireUncached('./src/data')))
     .pipe(rename('index.html'))
     .pipe(gulp.dest(dist))
 }
 
 function copyCss() {
-  return gulp.src('skills.css')
+  return gulp.src('src/skills.css')
     .pipe(gulp.dest(dist));
 }
 
