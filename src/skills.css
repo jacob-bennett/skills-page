@@ -1,7 +1,11 @@
-@import "variables";
+/*@import "variables";*/
 
 .skills-container {
     margin: 0 5px;
+}
+
+.skill-section > h2 {
+    padding-left: 3px;
 }
 
 .skill-list {
@@ -12,65 +16,135 @@
     border: 1px solid black;
     margin-right: 20px;
 
-li {
+    /*Added*/
+    /*height: 46px;*/
+    /*margin: 0 0 1px 0;*/
+    /*padding: 4px 0 0 3px;*/
+
+    padding: 0;
+    list-style-type: none;
+}
+
+.skill-list li {
     font-family: Times New Roman, serif;
     font-size: 16px;
     height: 50px;
     margin: 0 0 1px 0;
     color: #ffffff;
+
 }
 
-// Use mixins if contents of class becomes bigger.
-   .level-20 {
-       width: 20%;
-   }
+li {
+    /*font-family: Times New Roman, serif;*/
+    /*font-size: 16px;*/
+    /*height: 50px;*/
+    /*margin: 0 0 1px 0;*/
+    /*color: #ffffff;*/
+}
+
+/*// Use mixins if contents of class becomes bigger.*/
+.level-20 {
+    width: 20%;
+}
+
 .level-40 {
     width: 40%;
 }
+
 .level-60 {
     width: 60%;
 }
+
 .level-80 {
     width: 80%;
 }
+
 .level-100 {
     width: 100%;
+    background-color: #7ec699;
 }
+
+/*}*/
+
+
+
+
+/*    li {*/
+/*        background: repeating-linear-gradient(45deg, $ color, $ color 3px, #ffffff 3px, #ffffff 9px);*/
+
+/*div {*/
+/*    height: 46px;*/
+/*    margin: 0 0 1px 0;*/
+/*    color: #ffffff;*/
+/*    background-color: $ color;*/
+/*    padding: 4px 0 0 3px;*/
+
+/*}*/
+
+/*Should probably be done in JS*/
+/*.skill-list-color-0 {*/
+/*@include skill-list-item($primary-color);*/
+/*    background: repeating-linear-gradient(45deg, $color, $color 3px, #ffffff 3px, #ffffff 9px);*/
+/*    color: #ffffff;*/
+/*    background-color: $ color;*/
+/*}*/
+
+/*.skill-list-color-1 {*/
+/*@include skill-list-item($secondary-color);*/
+/*    background: repeating-linear-gradient(45deg, $color, $color 3px, #ffffff 3px, #ffffff 9px);*/
+/*    color: #ffffff;*/
+/*    background-color: $ color;*/
+/*}*/
+.skill-list-color-0 li {
+    background: repeating-linear-gradient(45deg, #ff0066, #ff0066 3px, #ffffff 3px, #ffffff 9px);
+    color: #ffffff;
+    /*background-color: $ color;*/
+}
+
+/*.skill-list-color-2 {*/
+/*    background: repeating-linear-gradient(45deg, $color, $color 3px, #ffffff 3px, #ffffff 9px);*/
+/*    color: #ffffff;*/
+/*    background-color: $ color;*/
+/*}*/
+
+.skill-list-color-1 li {
+    color: #ffffff;
+    background: repeating-linear-gradient(45deg, #33cccc, #33cccc 3px, #ffffff 3px, #ffffff 9px);
+}
+
+.skill-list-color-2 li {
+    color: #ffffff;
+    background: repeating-linear-gradient(45deg, #f7e530, #f7e530 3px, #ffffff 3px, #ffffff 9px);
 }
 
 
-@mixin skill-list-item($color) {
-    li {
-        background: repeating-linear-gradient(45deg, $color, $color 3px, #ffffff 3px, #ffffff 9px);
+.skill-list-item {
+    height: 46px;
+    margin: 0 0 1px 0;
+    color: #ffffff;
 
-    div {
-        height: 46px;
-        margin: 0 0 1px 0;
-        color: #ffffff;
-        background-color: $color;
-        padding: 4px 0 0 3px;
-    }
-}
-}
-.skill-list-color-0 {
-@include skill-list-item($primary-color);
+    /*padding: 4px 0 0 0;*/
+padding-top: 4px;
 }
 
-.skill-list-color-1 {
-@include skill-list-item($secondary-color);
+/*.skill-list-color-2, .skill-list-item {*/
+/*    background-color: #f7e530;*/
+/*}*/
+
+.skill-list-color-0  .skill-list-item {
+    background-color: #ff0066;
 }
 
-.skill-list-color-2 {
-@include skill-list-item($tertiary-color);
-//div {
-  //#ffec31; Too hard to see white text
-    //#ebd92e; A little too dark
-    //#f7e530;
-  //}
+.skill-list-color-1  .skill-list-item {
+    background-color: #33cccc;
 }
 
-@media #{$tablet-conditions} {
-    /* tablet */
+.skill-list-color-2  .skill-list-item {
+    background-color: #f7e530;
+}
+
+/* Average portrait tablet */
+@media (min-width: 961px) {
     .skills-container {
         margin: auto;
     }
@@ -83,5 +157,23 @@ li {
         float: left;
         overflow: auto;
     }
+}
 
+/* Average modern computer / landscape tablet */
+/*@media (min-width: 1281px and (min-height: 890px)) {*/
+@media (min-width: 1281px) {
+    body {
+        /*position: fixed;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*left: 0;*/
+        /*top: 0;*/
+        /*z-index: 10;*/
+    }
+
+    main {
+        width: 75%;
+        margin: auto;
+        /*max-width: 1280px;*/
+    }
 }
