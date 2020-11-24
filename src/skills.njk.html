@@ -2,28 +2,20 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <!--    <meta http-equiv="x-ua-compatible" content="ie=edge">-->
     <title>Jacob Bennett</title>
+
+    <!--    TODO: -->
+    <!--    <meta http-equiv="x-ua-compatible" content="ie=edge">-->
     <!--    <meta name="description" content="">-->
     <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 
-<!--    TODO -->
-        <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="skills.css">
-
-    <script type="application/javascript">
-
-    </script>
 </head>
 
 <body>
 <main>
-
-    <div class="row">
-        <div class="col-xs-12 header">
-            <h1>Skills</h1>
-        </div>
-    </div>
+    <h1>Skills</h1>
 
     <div class="skills-container">
         {% for key, category in skills %}
@@ -33,21 +25,15 @@
             <ul class="skill-list skill-list-color-{{ category.color }}">
                 {% for name, level in category.skills %}
                 <li>
-                    <div class="level-{{ level }} skill-list-item">{{ name }}</div>
+                    <div class="level-{{ level }} skill-list-item">
+                        <p>{{ name }}</p>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
         </div>
         {% endfor %}
     </div>
-
 </main>
 </body>
-
-
-{# TODO remove #}
-<!--<script src="https://use.fontawesome.com/6d9e9b768a.js"></script>-->
-<!--<script src="js/plugins.js"></script>-->
-<!--<script src="js/main.js"></script>-->
-
 </html>
