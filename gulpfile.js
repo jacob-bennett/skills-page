@@ -18,7 +18,7 @@ async function clean(done) {
 function html() {
   return gulp.src('src/skills.njk.html')
     .pipe(nunjucks.compile(requireUncached('./src/data')))
-    .pipe(rename('index.html'))
+    .pipe(rename('skills.html'))
     .pipe(gulp.dest(dist))
 }
 
@@ -32,10 +32,5 @@ function normalizeCss() {
     .pipe(gulp.dest(dist));
 }
 
-// TODO
-// gulp.task('copy:normalize', function () {
-//     return gulp.src('node_modules/normalize.css/normalize.css')
-//                .pipe(gulp.dest(dirs.dist + '/css'));
-// });
-
 exports.build = gulp.series(clean, gulp.parallel(html, css, normalizeCss));
+exports.buildWithoutClean = gulp.parallel(html, css, normalizeCss);
