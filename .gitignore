@@ -4,4 +4,4 @@ node_modules
 .gitattributes
 .idea/
 dist/
-
+nvm/
