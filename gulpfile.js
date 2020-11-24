@@ -22,8 +22,13 @@ function html() {
     .pipe(gulp.dest(dist))
 }
 
-function copyCss() {
+function css() {
   return gulp.src('src/skills.css')
+    .pipe(gulp.dest(dist));
+}
+
+function normalizeCss() {
+  return gulp.src('node_modules/normalize.css/normalize.css')
     .pipe(gulp.dest(dist));
 }
 
@@ -33,4 +38,4 @@ function copyCss() {
 //                .pipe(gulp.dest(dirs.dist + '/css'));
 // });
 
-exports.build = gulp.series(clean, gulp.parallel(html, copyCss));
+exports.build = gulp.series(clean, gulp.parallel(html, css, normalizeCss));

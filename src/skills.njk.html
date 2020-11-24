@@ -7,39 +7,43 @@
     <!--    <meta name="description" content="">-->
     <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 
-<!--    <link rel="stylesheet" href="css/normalize.css">-->
-<!--    <link rel="stylesheet" href="css/styles.css">-->
+<!--    TODO -->
+        <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="skills.css">
+
+    <script type="application/javascript">
+
+    </script>
 </head>
 
-<div class="outer-container">
-    <main>
+<body>
+<main>
 
-        <div class="row">
-            <div class="col-xs-12 header">
-                <h1>Skills</h1>
-            </div>
+    <div class="row">
+        <div class="col-xs-12 header">
+            <h1>Skills</h1>
         </div>
+    </div>
 
-        <div class="skills-container">
-            {% for key, category in skills %}
-            <div class="skill-section">
-                <h2 class style="padding-left: 3px">{{ category.name }}</h2>
+    <div class="skills-container">
+        {% for key, category in skills %}
+        <div class="skill-section">
+            <h2>{{ category.name }}</h2>
 
-                <ul class="skill-list skill-list-color-{{ category.color }}">
-                    {% for name, level in category.skills %}
-                    <li>
-                        <div class="level-{{ level }}">{{ name }}</div>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
+            <ul class="skill-list skill-list-color-{{ category.color }}">
+                {% for name, level in category.skills %}
+                <li>
+                    <div class="level-{{ level }} skill-list-item">{{ name }}</div>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
+        {% endfor %}
+    </div>
 
-    </main>
+</main>
+</body>
 
-</div>
 
 {# TODO remove #}
 <!--<script src="https://use.fontawesome.com/6d9e9b768a.js"></script>-->
