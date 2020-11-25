@@ -17,6 +17,10 @@ body {
     color: #ffffff;
 }
 
+.skill-list li:last-child {
+    margin-bottom: 0;
+}
+
 .skill-list-item {
     height: 46px;
     margin: 0 0 1px 0;
