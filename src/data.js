@@ -35,9 +35,9 @@ module.exports = {
       "color": 2,
       "skills": {
         "AWS": 80,
+        "Docker": 80,
         "Datadog": 80,
         "CI/CD": 80,
-        "Docker": 60,
         "Linux": 60,
         "New Relic": 60,
         "NGINX": 40,
